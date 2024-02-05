@@ -1,11 +1,12 @@
 
-import streamlit as st
-from streamlit.logger import get_logger
-
-LOGGER = get_logger(__name__)
 
 
 def run():
+    import streamlit as st
+    from streamlit.logger import get_logger
+
+    LOGGER = get_logger(__name__)
+
     st.set_page_config(
         page_title="xaraf",
         page_icon="🚗🚙🚍",
