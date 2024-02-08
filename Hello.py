@@ -1,6 +1,3 @@
-
-
-
 def run():
     import streamlit as st
     from streamlit.logger import get_logger
@@ -101,7 +98,7 @@ def run():
         
         # Display the prediction
         # st.write("Predicted Value: ", y_pred_gbr)
-        st.write("Predicted Value:", f"<div style='text-align: center;'>{y_pred_gbr}</div>", unsafe_allow_html=True)
+        st.write("Predicted Value: ", f"<div style='text-align: center;'>{y_pred_gbr}</div>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
