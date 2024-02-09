@@ -20,7 +20,7 @@ def run():
     # combined_app.py
     import pandas as pd
     import pickle
-    from sklearn.preprocessing import LabelEncoder
+    #from sklearn.preprocessing import LabelEncoder
     from sklearn.ensemble import GradientBoostingRegressor
 
 
