@@ -57,7 +57,6 @@ def run():
     ]
 
 
-
     def get_user_inputs():
         user_inputs = {}
         for feature in feature_names:
@@ -65,17 +64,16 @@ def run():
                 # Provide a list of options for 'Manufacturer'
                 manufacturer_options = ['Volvo', 'Audi', 'Acura', 'Chevrolet', 'Cadillac', 'Buick', 'BMW', 'Dodge', 'Toyota', 'Pontiac', 'Dodge', 'Chevrolet']
                 selected_manufacturer = st.selectbox(f"Select {feature}:", options=manufacturer_options)
-                user_inputs[feature] = selected_manufacturer
+                # Encoding Manufacturer as 1, 2, 3, ...
+                encoded_manufacturer = manufacturer_options.index(selected_manufacturer) + 1
+                user_inputs[feature] = encoded_manufacturer
             else:
                 # Use Streamlit widgets for numeric input
                 value = st.number_input(f"Enter value for {feature}:")
                 user_inputs[feature] = value
 
-        # Convert 'Manufacturer' to numerical using LabelEncoder
-        le = LabelEncoder()
-        user_inputs['Manufacturer'] = le.fit_transform([user_inputs['Manufacturer']])[0]
-
         return user_inputs
+
 
 
     # Use Streamlit form to collect all user inputs
